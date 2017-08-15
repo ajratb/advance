@@ -24,7 +24,8 @@ public class Main {
         LocalDate date = LocalDate.now();
         DateTimeFormatter formatter
                 = DateTimeFormatter.ofPattern("d MMMM, EEEE");
-        System.out.println(date.plusDays(20).format(formatter));
+        System.out.println(date.format(formatter));
+        System.out.println("in 20 days "+date.plusDays(20).format(formatter));
 
         //LocalTime time = LocalTime.now();
         TimerTask tt = new TimerTask() {
