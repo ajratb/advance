@@ -5,6 +5,7 @@
  */
 package ru.waytosky;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -20,12 +21,22 @@ public class PropertiesFile {
      */
     public static void main(String[] args) {
         Properties prop = new Properties();
+//        Properties prop1 = new Properties();
         InputStream input = null;
-
+        
+        try (FileOutputStream output = new FileOutputStream("src/config.properties")) {
+            prop.setProperty("database", "localhost1");
+		prop.setProperty("dbuser", "mkyong");
+            prop.setProperty("dbpassword", "password");
+            prop.store(output, null);
+        } catch (Exception e) {
+            System.out.println("output exception");
+        }
         try {
-            String filename = "config.properties";
+            String filename = "./config.properties";
             input = PropertiesFile.class.getClassLoader()
                     .getResourceAsStream(filename);
+
             if (input == null) {
                 System.out.println("Sorry, unable to find" + filename);
                 return;
