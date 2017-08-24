@@ -19,7 +19,7 @@ public class PropertiesCache {
 
     private PropertiesCache() {
         //Private constructor to restrict new instances
-        InputStream in = this.getClass().getClassLoader().getResourceAsStream("config.properties");
+        InputStream in = this.getClass().getClassLoader().getResourceAsStream("./config.properties");
         System.out.println("Read all properties from file");
         try {
             configProp.load(in);
