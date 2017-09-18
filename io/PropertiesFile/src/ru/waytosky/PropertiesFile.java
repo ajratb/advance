@@ -5,9 +5,13 @@
  */
 package ru.waytosky;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 /**
@@ -23,10 +27,25 @@ public class PropertiesFile {
         Properties prop = new Properties();
 //        Properties prop1 = new Properties();
         InputStream input = null;
+//        File file = new File(System.getProperty("user.home") + "\\AppData\\Roaming\\КанцелярияИСС");
+//        if (!file.exists()) {
+//            
+//                file.mkdir();
+//          
+//        }
+//        System.out.println(file.exists());
+        Path path= Paths.get(System.getProperty("user.home") + "\\AppData\\Roaming\\Канцелярия ИСС\\app.properties");
         
-        try (FileOutputStream output = new FileOutputStream("src/config.properties")) {
-            prop.setProperty("database", "localhost1");
-		prop.setProperty("dbuser", "mkyong");
+        try {
+            Files.createDirectories(path.getParent());
+            Files.createFile(path);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        try (FileOutputStream output = new FileOutputStream(path.toFile())) {
+            prop.setProperty("database", "localhost22");
+            prop.setProperty("dbuser", "mkyong88");
             prop.setProperty("dbpassword", "password");
             prop.store(output, null);
         } catch (Exception e) {
