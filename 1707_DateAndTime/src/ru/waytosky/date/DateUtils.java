@@ -5,11 +5,15 @@
  */
 package ru.waytosky.date;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -42,19 +46,38 @@ public class DateUtils {
         return result;
     }
 
-    public static  Date localDateTimeToDate(LocalDateTime ldt) {
+    public static Date localDateTimeToDate(LocalDateTime ldt) {
         Date out = Date.from(ldt.atZone(ZoneId.systemDefault()).toInstant());
         return out;
     }
 
-    public static  XMLGregorianCalendar localDateTimeToXmlCalendar(LocalDateTime ldt)
+    public static XMLGregorianCalendar localDateTimeToXmlCalendar(LocalDateTime ldt)
             throws DatatypeConfigurationException {
         Date date = localDateTimeToDate(ldt);
         return dateToXmlCalendar(date);
     }
-    
-    public static LocalDateTime xmlCalendarToLocalDateTime(XMLGregorianCalendar cal){
+
+    public static LocalDateTime xmlCalendarToLocalDateTime(XMLGregorianCalendar cal) {
         Date date = xmlCalendarToDate(cal);
         return dateTolocalDateTime(date);
+    }
+
+    public static String xmlCalendarToString(XMLGregorianCalendar cal) {
+        String format = "dd.MM.yyyy";
+        DateFormat df = new SimpleDateFormat(format);
+        return df.format(cal.toGregorianCalendar().getTime());
+    }
+
+    public static void main(String[] args) {
+        try {
+            XMLGregorianCalendar calFromLocalDate = localDateTimeToXmlCalendar(LocalDateTime.now());
+            System.out.println(calFromLocalDate);
+            XMLGregorianCalendar calFromDate = dateToXmlCalendar(new Date());
+            System.out.println(calFromDate);
+            System.out.println(xmlCalendarToString(calFromDate));
+            System.out.println(xmlCalendarToString(calFromLocalDate));
+        } catch (DatatypeConfigurationException ex) {
+            Logger.getLogger(DateUtils.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
