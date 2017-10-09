@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--using in TutorialsPoint class-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+    
+    <bean id="hello" class="tpoint.spring.log4j.HelloWorld">
+        <property name="message" value="Set in spring string-value"/>
+    </bean>
+
+</beans>
