@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Configuration file for both: ApacheDoc and TutorialsPoint classes
+-->
+
+<Configuration status="WARN">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+    <File name="File" fileName="src/log.out">
+    
+         <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </File>
+  </Appenders>
+  <Loggers>
+    <Logger name="apachedoc.log4j.Bar" level="trace">
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Logger name="tpoint.spring.log4j.HelloWorld" level="debug">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="File"/>
+    </Logger>
+    <Root level="error">
+      <AppenderRef ref="File"/>
+    </Root>
+  </Loggers>
+</Configuration>
