@@ -5,7 +5,10 @@
  */
 package ru.waytosky;
 
+import java.io.File;
 import java.io.IOException;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 /**
  *
@@ -17,7 +20,9 @@ public class FilesApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        FilesUtils_J8.deleteInDirectory("C:\\123");
+//        FilesUtils_J8.deleteInDirectory("C:\\123");
+//        FileChooser fChooser=new FileChooser();
+//        File f = fChooser.showOpenDialog(new Stage());
     }
     
 }
