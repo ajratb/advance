@@ -6,6 +6,7 @@
 package ru.waytosky.date;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -79,5 +80,11 @@ public class DateUtils {
         } catch (DatatypeConfigurationException ex) {
             Logger.getLogger(DateUtils.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public static Date getDateFromString(String dateInString) throws ParseException{
+         SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+         Date date = formatter.parse(dateInString);
+         return date;
     }
 }
