@@ -5,10 +5,9 @@
  */
 package ru.waytosky;
 
-import java.io.File;
 import java.io.IOException;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  *
@@ -23,6 +22,13 @@ public class FilesApp {
 //        FilesUtils_J8.deleteInDirectory("C:\\123");
 //        FileChooser fChooser=new FileChooser();
 //        File f = fChooser.showOpenDialog(new Stage());
+        //Path path = Paths.get(FilesUtils.getApplicationFilePath());
+        //java.nio.file.InvalidPathException: Illegal char <:> at index 4: 
+        //file:/E:/INFO_tools/JAVA/advance/io/Files/build/classes/ru/waytosky/app.properties
+//        System.out.println(FilesUtils.getApplicationFilePath());
+        System.out.println(FilesUtils.copyFileToDirectory(
+                "//netdisk/users/715/БикчентаевАА/Post/CHANCELLERY/Chancellery_UI.jar", 
+                "d:/testcopy/dest/Chancellery_UI.jar"));
     }
     
 }

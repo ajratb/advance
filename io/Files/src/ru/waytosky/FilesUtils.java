@@ -6,6 +6,10 @@
 package ru.waytosky;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
@@ -32,10 +36,36 @@ public class FilesUtils {
 //}
         return ext;
     }
-    
-    public static boolean checkFileExt(String ext){
-        ext=ext.toUpperCase();
-         Stream<String> stream = Arrays.stream(exts);
-         return stream.anyMatch(ext::equals);
+
+    public static boolean checkFileExt(String ext) {
+        ext = ext.toUpperCase();
+        Stream<String> stream = Arrays.stream(exts);
+        return stream.anyMatch(ext::equals);
+    }
+
+    public static String getApplicationFilePath() {
+        return FilesUtils.class.getResource("/ru/waytosky/app.properties").toExternalForm();
+    }
+
+    public static boolean copyFileToDirectory(String sourceFile, String target) {
+        File sfile = new File(sourceFile);
+        File tfile = new File(target);
+        if (tfile.getParentFile().exists() && sfile.exists()) {
+            return copyFileToDirectory(sfile, tfile);
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean copyFileToDirectory(File source, File target) {
+        try {
+            Path result = Files.copy(source.toPath(), target.toPath(),  REPLACE_EXISTING);
+            if(result!=null){
+                return true;
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return false;
     }
 }
