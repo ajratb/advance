@@ -57,6 +57,22 @@ public class PropertiesKeeper {
         PropertiesKeeper propsKeeper = PropertiesKeeper.getInstance();
         System.out.println("dbuser is: "+ propsKeeper.getProperty("dbuser"));
         propsKeeper.setProperty("newOne", "exelent");
+        propsKeeper.setProperty("dbuser", "exelent");
+        System.out.println("dbuser is: "+ propsKeeper.getProperty("dbuser"));
+        Properties alterProps = new Properties();
+        File file = new File("C:\\MyJava\\PROJECTS\\GIT\\advance\\io\\PropertiesFile\\config.properties");
+        try(InputStream in = new FileInputStream(file)) {
+            alterProps.load(in);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try(OutputStream out = new FileOutputStream(file)){
+            alterProps.setProperty("dbuser", "new_val");
+            alterProps.store(out, null);
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+         System.out.println("dbuser is: "+ propsKeeper.getProperty("dbuser"));
     }
 
 }
