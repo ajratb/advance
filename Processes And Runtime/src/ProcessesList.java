@@ -17,8 +17,10 @@ public class ProcessesList {
     public static void main(String[] args) throws IOException {
         
         String line;
-        
-        Process p = Runtime.getRuntime().exec(System.getenv("windir") + "\\system32\\" + "tasklist.exe");
+        String findProcess = "SnippingTool.exe";
+        String filenameFilter = "/nh /fi \"Imagename eq "+findProcess+"\"";
+        //gt, lt, ge, le
+        Process p = Runtime.getRuntime().exec(System.getenv("windir") + "\\system32\\" + "tasklist.exe "+filenameFilter);
 
         BufferedReader input
                 = new BufferedReader(new InputStreamReader(p.getInputStream()));
