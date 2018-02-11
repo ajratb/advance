@@ -15,17 +15,19 @@ import java.io.InputStreamReader;
 public class ProcessesList {
 
     public static void main(String[] args) throws IOException {
-        
+
         String line;
         String findProcess = "SnippingTool.exe";
-        String filenameFilter = "/nh /fi \"Imagename eq "+findProcess+"\"";
+        String filenameFilter = "/nh /fi \"Imagename eq " + findProcess + "\"";
         //gt, lt, ge, le
-        Process p = Runtime.getRuntime().exec(System.getenv("windir") + "\\system32\\" + "tasklist.exe "+filenameFilter);
+        Process p = Runtime.getRuntime().exec(System.getenv("windir") + "\\system32\\" + "tasklist.exe " + filenameFilter);
 
         BufferedReader input
                 = new BufferedReader(new InputStreamReader(p.getInputStream()));
         while ((line = input.readLine()) != null) {
-            System.out.println(line); //<-- Parse data here.
+            if (line.contains(findProcess)) {
+                System.out.println(line); //<-- Parse data here.
+            }
         }
         input.close();
 
