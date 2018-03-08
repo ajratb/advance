@@ -2,13 +2,8 @@
 import java.util.Random;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author Ayrat
+ * https://ru.stackoverflow.com/questions/2473/%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D1%8B%D0%B5-%D1%87%D0%B8%D1%81%D0%BB%D0%B0
+ * https://stackoverflow.com/questions/11239495/checking-if-file-is-completely-written
  */
 public class RandomSample {
 
