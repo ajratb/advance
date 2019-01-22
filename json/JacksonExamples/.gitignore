@@ -1,0 +1,9 @@
+/.nb-gradle/
+/.gradle/
+
+/build/
+
+/bin/
+
+/out/
+

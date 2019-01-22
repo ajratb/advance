@@ -1,0 +1,21 @@
+[{
+        "name": "mkyong",
+        "age": 45,
+        "position": "director",
+        "salary": 7500,
+        "skills": ["java", "python"]
+    },
+    {
+        "name": "ayrat",
+        "age": 35,
+        "position": "engineer",
+        "salary": 3500,
+        "skills": ["java", "kotlin"]
+    },
+    {
+        "name": "vityok",
+        "age": 30,
+        "salary": 500,
+        "skills": ["PC", "windows"]
+    }
+]
