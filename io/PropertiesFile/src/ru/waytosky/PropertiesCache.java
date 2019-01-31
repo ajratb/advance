@@ -1,12 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ru.waytosky;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Properties;
 import java.util.Set;
 
@@ -15,15 +14,17 @@ import java.util.Set;
  */
 public class PropertiesCache {
 
-    private final Properties configProp = new Properties();
+    private final Properties pkgProp = new Properties();
 
     private PropertiesCache() {
         //Private constructor to restrict new instances
-        InputStream in = this.getClass().getClassLoader().getResourceAsStream("./config.properties");
-        System.out.println("Read all properties from file");
+
         try {
-            configProp.load(in);
-        } catch (IOException e) {
+            URI pkgPropsUri = getClass().getResource("app.properties").toURI();
+
+            System.out.println("Read all properties from file");
+            pkgProp.load(new FileInputStream(new File(pkgPropsUri)));
+        } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }
     }
@@ -39,34 +40,39 @@ public class PropertiesCache {
     }
 
     public String getProperty(String key) {
-        return configProp.getProperty(key);
+        return pkgProp.getProperty(key);
     }
 
     public Set<String> getAllPropertyNames() {
-        return configProp.stringPropertyNames();
+        return pkgProp.stringPropertyNames();
     }
 
     public boolean containsKey(String key) {
-        return configProp.containsKey(key);
+        return pkgProp.containsKey(key);
     }
 
     public void setProperty(String key, String value) {
-        configProp.setProperty(key, value);
+        pkgProp.setProperty(key, value);
     }
 
     public static void main(String[] args) {
+
+        PropertiesCache keeper = getInstance();
         //Get individual properties
-        System.out.println(PropertiesCache.getInstance().getProperty("firstName"));
+        System.out.println("User prop value: "+keeper.getProperty("user"));
 
         //All property names
-        System.out.println(PropertiesCache.getInstance().getAllPropertyNames());
+        System.out.println("All props names: "+keeper.getAllPropertyNames());
 
         PropertiesCache cache = PropertiesCache.getInstance();
         if (cache.containsKey("country") == false) {
             cache.setProperty("country", "INDIA");
         }
-//Verify property
+        //Verify property
         System.out.println(cache.getProperty("country"));
+
+        System.out.println("boolVal" + keeper.getProperty("boolVal"));
     }
 
 }
+ 
