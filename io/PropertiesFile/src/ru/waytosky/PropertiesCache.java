@@ -55,24 +55,24 @@ public class PropertiesCache {
         pkgProp.setProperty(key, value);
     }
 
-    public static void main(String[] args) {
-
-        PropertiesCache keeper = getInstance();
-        //Get individual properties
-        System.out.println("User prop value: "+keeper.getProperty("user"));
-
-        //All property names
-        System.out.println("All props names: "+keeper.getAllPropertyNames());
-
-        PropertiesCache cache = PropertiesCache.getInstance();
-        if (cache.containsKey("country") == false) {
-            cache.setProperty("country", "INDIA");
-        }
-        //Verify property
-        System.out.println(cache.getProperty("country"));
-
-        System.out.println("boolVal" + keeper.getProperty("boolVal"));
-    }
+//    public static void main(String[] args) {
+//
+//        PropertiesCache keeper = getInstance();
+//        //Get individual properties
+//        System.out.println("User prop value: "+keeper.getProperty("user"));
+//
+//        //All property names
+//        System.out.println("All props names: "+keeper.getAllPropertyNames());
+//
+//        PropertiesCache cache = PropertiesCache.getInstance();
+//        if (cache.containsKey("country") == false) {
+//            cache.setProperty("country", "INDIA");
+//        }
+//        //Verify property
+//        System.out.println(cache.getProperty("country"));
+//
+//        System.out.println("boolVal" + keeper.getProperty("boolVal"));
+//    }
 
 }
  
