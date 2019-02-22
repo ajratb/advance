@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package ru.waytosky;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -13,11 +9,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Ayrat
+ * @author BikchentaevAA
  */
-public class DateUtilsTest {
+public class DateTimeConverterTest {
     
-    public DateUtilsTest() {
+    public DateTimeConverterTest() {
     }
     
     @BeforeClass
@@ -39,8 +35,6 @@ public class DateUtilsTest {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-     @Test
-     public void convertLocaleDateTimeToXmlCalendar() {
-         
-     }
+    // @Test
+    // public void hello() {}
 }

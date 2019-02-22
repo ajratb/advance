@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ru.waytosky.date;
+package ru.waytosky;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -31,5 +26,9 @@ public class TimerSample {
         Timer timer = new Timer();
         timer.schedule(tt, 0, 1000);
         
+    }
+    
+    public static void main(String[] args) {
+        new TimerSample().showTime();
     }
 }

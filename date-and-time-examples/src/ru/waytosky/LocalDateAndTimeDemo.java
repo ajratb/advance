@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ru.waytosky.date;
+package ru.waytosky;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
@@ -23,7 +24,7 @@ public class LocalDateAndTimeDemo {
 
     String dateFormat = "yyyy-MM-dd";
     String timeFormat = "HH:mm:ss.SSS";
-    String dateTimeFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS";
+    String dateTimeFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS";//"d MMMM, EEEE"
 
     DateTimeFormatter df
             = DateTimeFormatter.ofPattern(dateFormat);
