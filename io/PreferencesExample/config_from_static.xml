@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+<preferences EXTERNAL_XML_VERSION="1.0">
+  <root type="user">
+    <map/>
+    <node name="ru">
+      <map/>
+      <node name="waytosky">
+        <map/>
+        <node name="staticmethod">
+          <map>
+            <entry key="openStartMenu" value="true"/>
+            <entry key="SavePass" value="true"/>
+            <entry key="UserName" value=""/>
+            <entry key="PassWord" value="123456"/>
+          </map>
+        </node>
+      </node>
+    </node>
+  </root>
+</preferences>

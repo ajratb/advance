@@ -18,7 +18,7 @@ import javafx.scene.control.Label;
  *
  * @author BikchentaevAA
  */
-public class mainController implements Initializable {
+public class MainPane implements Initializable {
 
     @FXML
     private Label lbStatus;
@@ -33,14 +33,20 @@ public class mainController implements Initializable {
 
     private final String FILE_NAME = "config.xml";
 
-    public mainController() {
+    public MainPane() {
         file = new File(FILE_NAME);
     }
 
     @FXML
     void onActionBtnCreatePrefs(ActionEvent event)
             throws BackingStoreException, IOException {
-        Preferences preferences = Preferences.userRoot();
+        createPreferences();
+    }
+
+    private void createPreferences() throws BackingStoreException, IOException {
+//        Preferences preferences = Preferences.userRoot().node(this.getClass().getName());
+//      Preferences preferences = Preferences.userRoot();
+        Preferences preferences = Preferences.userNodeForPackage(this.getClass());
         preferences.putBoolean("openStartMenu", true);
         preferences.putBoolean("SavePass", true);
         preferences.put("UserName", "");
@@ -53,8 +59,9 @@ public class mainController implements Initializable {
             throws IOException, InvalidPreferencesFormatException {
         // this can throw FileNotFoundException
         Preferences.importPreferences(new FileInputStream(FILE_NAME));
-        Preferences preferences = Preferences.userRoot();
-
+        Preferences preferences = Preferences.userNodeForPackage(this.getClass());
+//        Preferences preferences = Preferences.userRoot();//it work even with root
+//        Preferences preferences = Preferences.userRoot().node(this.getClass().getName());
         boolean bool = preferences.getBoolean("SavePass", false);
         lbBoolVal.setText("bool: " + bool);
         String str = preferences.get("PassWord", "");

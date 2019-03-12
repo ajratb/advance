@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+<preferences EXTERNAL_XML_VERSION="1.0">
+  <root type="user">
+    <map>
+      <entry key="JetBrains.UserIdOnMachine" value="be38d8c7-29ce-4fe3-9b4a-7affb8d4491a"/>
+      <entry key="openStartMenu" value="true"/>
+      <entry key="SavePass" value="true"/>
+      <entry key="UserName" value=""/>
+      <entry key="PassWord" value="123456"/>
+    </map>
+  </root>
+</preferences>
