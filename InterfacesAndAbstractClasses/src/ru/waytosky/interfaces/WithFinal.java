@@ -9,7 +9,7 @@ import java.util.List;
  * @author BikchentaevAA
  */
 public interface WithFinal {
-    final List<String> strings = new ArrayList<>(Arrays.asList(new String[]{"final123", "final4jj"}));// плохо получаю статичный доступ!
-//    String s;
+    //always public static final
+    List<String> STRINGS = new ArrayList<>(Arrays.asList(new String[]{"final123", "final4jj"}));
     List<String> getStrings();
 }

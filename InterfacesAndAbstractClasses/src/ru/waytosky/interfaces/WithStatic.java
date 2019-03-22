@@ -11,11 +11,5 @@ import java.util.List;
  */
 public interface WithStatic<T> {
     
-    static List<String> staticStrings = new ArrayList<>(Arrays.asList(new String[]{"staticl123", "static4jj"}));
     
-    static void showMsgFromStatic(){
-        System.out.println("hello from static");
-    }
-    
-    void showMessage();
 }
