@@ -1,3 +1,7 @@
+package ru.wts.jna;
+
+
+
 
 import com.sun.jna.Native;
 import com.sun.jna.Pointer;

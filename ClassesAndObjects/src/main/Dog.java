@@ -4,11 +4,10 @@ package main;
  *
  * @author BikchentaevAA
  */
-public class Dog {
-    private String nick;
+public class Dog extends SuperAnimal{
 
-    public Dog(String nick) {
-        this.nick = nick;
+    public Dog( String nick) {
+        super("DOG", nick);
     }
 
     public void setNick(String nick) {

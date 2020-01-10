@@ -21,6 +21,7 @@ public class ClassesAndObjects {
         System.out.println("After that alpha is: " + alpha.toString());
         test.setNewNick(alpha);
         System.out.println("After that alpha is: " + alpha.toString());
+        SuperAnimal.getSuperAnimalType(alpha);
     }
 
     public static Dog staticSetNewDog(Dog dog) {
