@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ru.waytosky;
 
 import java.io.File;
@@ -20,7 +15,8 @@ import java.util.Properties;
  */
 public class PropertiesUtils {
 
-    private static final String propsLocation = System.getProperty("user.home") + "\\AppData\\Roaming\\ИСС Канцелярия\\app.properties";
+//    private static final String propsLocation = System.getProperty("user.home") + "\\AppData\\Roaming\\ИСС Канцелярия\\app.properties";
+    private static final String propsLocation = "example.properties";
     private static Properties props;
 //    private InputStream in;
 //    private OutputStream out;
@@ -37,7 +33,7 @@ public class PropertiesUtils {
         }
     }
 
-    public static void persistProperty(String name, String value) throws IOException, FileNotFoundException {
+    public static void persistProperty(String name, String value) throws FileNotFoundException, IOException{
         props = new Properties();
         File file = new File(propsLocation);
         if (!file.exists()) {
@@ -68,6 +64,14 @@ public class PropertiesUtils {
             props.store(output, null);
         }
         
+    }
+    
+    public static void main(String[] args) {
+        try {
+            persistProperty("123", "456");
+        } catch (IOException ex) {
+            System.out.println("IOException: " + ex.getMessage());
+        }
     }
 
 }
