@@ -2,6 +2,7 @@ package com.javacodegeeks.nio_tutorial.server;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.net.SocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 
@@ -12,7 +13,7 @@ public final class Client {
     }
 
     public static void main(final String[] args) {
-	final InetSocketAddress hostAddress = 
+	final SocketAddress hostAddress = 
                 new InetSocketAddress(Constants.HOST, Constants.PORT);
 
 	for (int i = 0; i < 3; i++) {
