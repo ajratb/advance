@@ -20,17 +20,17 @@ public final class Server {
 
     public static void main(final String[] args) throws Exception {
 	try (final Selector selector = Selector.open(); 
-                final ServerSocketChannel serverSocket = ServerSocketChannel.open();) {
+                final ServerSocketChannel serverChannel = ServerSocketChannel.open();) {
 	    final SocketAddress hostAddress = 
                     new InetSocketAddress(Constants.HOST, Constants.PORT);
-	    serverSocket.bind(hostAddress);
-	    serverSocket.configureBlocking(false);
-	    serverSocket.register(selector, serverSocket.validOps(), null);
+	    serverChannel.bind(hostAddress);
+	    serverChannel.configureBlocking(false);
+	    serverChannel.register(selector, serverChannel.validOps(), null);
 
 	    while (true) {
 		final int numSelectedKeys = selector.select();
 		if (numSelectedKeys > 0) {
-		    handleSelectionKeys(selector.selectedKeys(), serverSocket);
+		    handleSelectionKeys(selector.selectedKeys(), serverChannel);
 		}
 	    }
 	}
