@@ -1,4 +1,22 @@
-/**/nbproject/private/
+# Netbeans
+/**/.nb-gradle/
 /**/build/
+/**/nbproject/private/
 /**/dist/
+/**/bin/
+
+# Maven
+/**/log/
 /**/target/
+
+# Intellij
+/**/.idea/
+*.iml
+*.iws
+/**/jdbc/*.jar
+
+/**/out/
+/**/.gradle/
+/**/gradlew
+/**/gradlew.bat
+/**/gradle/
