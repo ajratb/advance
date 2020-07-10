@@ -18,7 +18,6 @@ public class SerializationExamples {
 //    private static final String file = System.getProperty("user.home") 
 //            + "\\AppData\\Roaming\\ИСС Канцелярия\\data\\emp_aliases.ser";
 //    
-
     private static final String file = "aliases.ser";
 
     public static void main(String[] args) {
@@ -27,22 +26,23 @@ public class SerializationExamples {
         hashmap.put(453L, new String[]{"ГД", "РssЛ"});
         serializeMap(hashmap);
         Map<Long, String[]> newmap = deserializeMap();
-        newmap.forEach((k,v)->{
-            System.out.println("entry key is "+k+" firstVal is "+v[0]+
-                    " secondVal is "+ v[1]);
+        newmap.forEach((k, v) -> {
+            System.out.println("entry key is " + k + " firstVal is " + v[0]
+                    + " secondVal is " + v[1]);
         });
     }
 
     public static void serializeMap(Map<Long, String[]> map) {
-        FileOutputStream fos;
-        try {
-            fos = new FileOutputStream(file);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(map);
-            oos.close();
 
-            FileInputStream fis = new FileInputStream(file);
-            ObjectInputStream ois = new ObjectInputStream(fis);
+        try (
+                FileOutputStream fos = new FileOutputStream(file);
+                ObjectOutputStream oos = new ObjectOutputStream(fos);
+                FileInputStream fis = new FileInputStream(file);
+                ObjectInputStream ois = new ObjectInputStream(fis);) {
+
+            oos.writeObject(map);
+            oos.flush();
+
             Map<String, String> anotherList = (Map<String, String>) ois.readObject();
             ois.close();
             System.out.println(anotherList);
@@ -69,5 +69,4 @@ public class SerializationExamples {
         }
         return null;
     }
-
 }
