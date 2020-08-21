@@ -21,17 +21,17 @@ public class Main {
         File json = path.toFile();
 //        File json = new File("src/main/resources/baeldung/items.json");
         System.out.println("json file exists: " + json.exists());
-        Item itemWithOwner = new ObjectMapper().readValue(json, Item.class);
+        UserData itemWithOwner = new ObjectMapper().readValue(json, UserData.class);
 
-        System.out.println("item name is " + itemWithOwner.itemName);
+        System.out.println("item name is " + itemWithOwner.info);
 
         // System.out.println(System.getProperty("user.dir"));//D:\GIT\Эксперименты\JacksonExamples
         ObjectMapper mapper = new ObjectMapper();
         SimpleModule module = new SimpleModule();
-        module.addDeserializer(Item.class, new ItemDeserializer());
+        module.addDeserializer(UserData.class, new AccountDeserializer());
         mapper.registerModule(module);
         File json2 = new File("src/main/resources/baeldung/s_items.json");
-        Item readValue = mapper.readValue(json2, Item.class);
+        UserData readValue = mapper.readValue(json2, UserData.class);
         System.out.println("Item owner is: "+readValue.owner.name);
     }
 

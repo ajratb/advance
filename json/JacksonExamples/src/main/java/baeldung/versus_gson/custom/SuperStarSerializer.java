@@ -1,6 +1,6 @@
 package baeldung.versus_gson.custom;
 
-import baeldung.versus_gson.ActorJackson;
+import baeldung.versus_gson.SuperStar;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
@@ -12,17 +12,17 @@ import java.util.stream.Collectors;
  *
  * @author BikchentaevAA
  */
-public class ActorJacksonSerializer
-        extends StdSerializer<ActorJackson> {
+public class SuperStarSerializer
+        extends StdSerializer<SuperStar> {
 
     private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
-    public ActorJacksonSerializer(Class t) {
+    public SuperStarSerializer(Class t) {
         super(t);
     }
 
     @Override
-    public void serialize(ActorJackson actor, JsonGenerator jsonGenerator,
+    public void serialize(SuperStar actor, JsonGenerator jsonGenerator,
             SerializerProvider serializerProvider) throws IOException {
 
         jsonGenerator.writeStartObject();

@@ -10,7 +10,7 @@ public class Movie {
 
     private String imdbId;
     private String director;
-    private List<ActorJackson> actors;
+    private List<SuperStar> actors;
 
     /**
      * For deserialization!.
@@ -18,7 +18,7 @@ public class Movie {
     public Movie() {
     }
     
-    public Movie(String imdbId, String director, List<ActorJackson> actors) {
+    public Movie(String imdbId, String director, List<SuperStar> actors) {
         this.imdbId = imdbId;
         this.director = director;
         this.actors = actors;
@@ -40,11 +40,11 @@ public class Movie {
         this.director = director;
     }
 
-    public List<ActorJackson> getActors() {
+    public List<SuperStar> getActors() {
         return actors;
     }
 
-    public void setActors(List<ActorJackson> actors) {
+    public void setActors(List<SuperStar> actors) {
         this.actors = actors;
     }
     

@@ -1,6 +1,6 @@
 package baeldung.versus_gson.custom;
 
-import baeldung.versus_gson.ActorJackson;
+import baeldung.versus_gson.SuperStar;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 
@@ -14,9 +14,9 @@ public class MovieWithNullValue {
     @JsonIgnore
     private String director;
      
-    private List<ActorJackson> actors;
+    private List<SuperStar> actors;
 
-    public MovieWithNullValue(String imdbId, String director, List<ActorJackson> actors) {
+    public MovieWithNullValue(String imdbId, String director, List<SuperStar> actors) {
         this.imdbId = imdbId;
         this.director = director;
         this.actors = actors;
@@ -38,11 +38,11 @@ public class MovieWithNullValue {
         this.director = director;
     }
 
-    public List<ActorJackson> getActors() {
+    public List<SuperStar> getActors() {
         return actors;
     }
 
-    public void setActors(List<ActorJackson> actors) {
+    public void setActors(List<SuperStar> actors) {
         this.actors = actors;
     }
 }

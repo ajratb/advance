@@ -1,0 +1,8 @@
+create gradle project here
+
+reproduce example from javarush
+
+see map cdi-ejb
+
+put to rights web-net/jee..
+

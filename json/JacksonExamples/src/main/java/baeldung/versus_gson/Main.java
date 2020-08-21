@@ -17,9 +17,9 @@ public class Main {
 
     public static void main(String[] args) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        ActorJackson rudyYoungblood = null;
+        SuperStar rudyYoungblood = null;
         try {
-            rudyYoungblood = new ActorJackson("nm2199632", sdf.parse("21-09-1982"),
+            rudyYoungblood = new SuperStar("nm2199632", sdf.parse("21-09-1982"),
                     Arrays.asList("Apocalypto", "Beatdown", "Wind Walkers"));
         } catch (ParseException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);

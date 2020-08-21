@@ -5,6 +5,7 @@ package baeldung.deserialize;
  * @author BikchentaevAA
  */
 public class User {
+    
     public int id;
     public String name;
 
@@ -15,6 +16,4 @@ public class User {
 
     public User() {
     }
-    
-    
 }

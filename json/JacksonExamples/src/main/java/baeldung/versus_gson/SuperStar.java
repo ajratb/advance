@@ -7,15 +7,16 @@ import java.util.List;
  *
  * @author BikchentaevAA
  */
-public class ActorJackson {
+public class SuperStar {
+
     private String imdbId;
     private Date dateOfBirth;
     private List<String> filmography;
 
-    public ActorJackson() {
+    public SuperStar() {
     }
 
-    public ActorJackson(String imdbId, Date dateOfBirth, List<String> filmography) {
+    public SuperStar(String imdbId, Date dateOfBirth, List<String> filmography) {
         this.imdbId = imdbId;
         this.dateOfBirth = dateOfBirth;
         this.filmography = filmography;
@@ -44,10 +45,10 @@ public class ActorJackson {
     public void setFilmography(List<String> filmography) {
         this.filmography = filmography;
     }
-     
+
     @Override
     public String toString() {
         return "ActorJackson [imdbId=" + imdbId + ", dateOfBirth=" + dateOfBirth
-          + ", filmography=" + filmography + "]";
+                + ", filmography=" + filmography + "]";
     }
 }

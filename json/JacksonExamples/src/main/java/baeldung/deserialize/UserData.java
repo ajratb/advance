@@ -4,17 +4,18 @@ package baeldung.deserialize;
  *
  * @author BikchentaevAA
  */
-public class Item {
+public class UserData {
+    
     public int id;
-    public String itemName;
+    public String info;
     public User owner;
 
-    public Item() {
+    public UserData() {
     }
     
-    public Item(int id, String itemName, User owner) {
+    public UserData(int id, String itemName, User owner) {
         this.id = id;
-        this.itemName = itemName;
+        this.info = itemName;
         this.owner = owner;
     }
 }

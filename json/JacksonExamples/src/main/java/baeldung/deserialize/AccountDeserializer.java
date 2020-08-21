@@ -14,25 +14,25 @@ import java.util.List;
  *
  * @author BikchentaevAA
  */
-public class ItemDeserializer extends StdDeserializer<Item> {
+public class AccountDeserializer extends StdDeserializer<UserData> {
 
-    public ItemDeserializer() {
+    public AccountDeserializer() {
         this(null);
     }
 
-    public ItemDeserializer(Class<?> vc) {
+    public AccountDeserializer(Class<?> vc) {
         super(vc);
     }
 
     @Override
-    public Item deserialize(JsonParser jp, DeserializationContext ctxt)
+    public UserData deserialize(JsonParser parser, DeserializationContext context)
             throws IOException, JsonProcessingException {
-        JsonNode node = jp.getCodec().readTree(jp);
+        JsonNode node = parser.getCodec().readTree(parser);
         int id = (Integer) ((IntNode) node.get("id")).numberValue();
         String itemName = node.get("itemName").asText();
         int userId = (Integer) ((IntNode) node.get("createdBy")).numberValue();
 
-        return new Item(id, itemName, getUserById(userId));
+        return new UserData(id, itemName, getUserById(userId));
     }
 
     private User getUserById(int id) {

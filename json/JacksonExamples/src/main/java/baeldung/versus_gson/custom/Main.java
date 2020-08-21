@@ -1,6 +1,6 @@
 package baeldung.versus_gson.custom;
 
-import baeldung.versus_gson.ActorJackson;
+import baeldung.versus_gson.SuperStar;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -21,9 +21,9 @@ public class Main {
     public static void main(String[] args) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
-        ActorJackson rudyYoungblood = null;
+        SuperStar rudyYoungblood = null;
         try {
-            rudyYoungblood = new ActorJackson(
+            rudyYoungblood = new SuperStar(
                     "nm2199632",
                     sdf.parse("21-09-1982"),
                     Arrays.asList("Apocalypto", "Beatdown", "Wind Walkers"));
@@ -34,7 +34,7 @@ public class Main {
                 = new MovieWithNullValue(null, "Mel Gibson", Arrays.asList(rudyYoungblood));
 
         SimpleModule module = new SimpleModule();
-        module.addSerializer(new ActorJacksonSerializer(ActorJackson.class));
+        module.addSerializer(new SuperStarSerializer(SuperStar.class));
         ObjectMapper mapper = new ObjectMapper();
         try {
             String jsonResult = mapper.registerModule(module)
