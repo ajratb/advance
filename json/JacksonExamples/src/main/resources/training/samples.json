@@ -1,0 +1,25 @@
+[
+  {
+    "accessGroups": "Core Team",
+    "toGroups": "any",
+    "exceptGroups": [
+      "some group",
+      "another group"
+    ]
+  },
+  {
+    "accessGroups": [
+      "Gatekeeper_FirstPD",
+      "Heads_FirstPD",
+      "Head of PMs_FirstPD"
+    ],
+    "toGroups": "FirstPD"
+  },
+  {
+    "accessGroups": [
+      "Gatekeeper_SecondPD"
+    ],
+    "toGroups": "SecondPD",
+    "exceptGroups": "none"
+  }
+]

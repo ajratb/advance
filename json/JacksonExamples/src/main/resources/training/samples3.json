@@ -1,0 +1,1 @@
+[{"accessGroups":"Sportmaster Core Team","toGroups":"any","exceptGroups":["some group","another group"]},{"accessGroups":["Gatekeeper_SEPD","Heads_SEPD","Head of PMs_SEPD"],"toGroups":["SEPD"]},{"accessGroups":["Gatekeeper_FTW"],"toGroups":"FPD","exceptGroups":"none"}]
