@@ -5,13 +5,14 @@ plugins {
 }
 
 repositories {
-    mavenLocal()
+//    mavenLocal()
+    mavenCentral()
     jcenter()
 }
 
 mainClassName = 'mkyong.Main'
 
 dependencies {
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.7'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.8'
+    testImplementation 'junit:junit:4.12'
 }
