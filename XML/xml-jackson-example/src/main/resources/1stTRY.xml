@@ -1,0 +1,10 @@
+<wc:COLLECTION xmlns:wc="http://www.ptc.com/infoengine/1.0">
+<com.lcs.wc.product.LCSProduct NAME="testAttrValue">
+    <wc:INSTANCE>
+        <seasonMasterReference>OR:com.lcs.wc.season.LCSSeasonMaster:6303049:549374011-1498737840507-197491520-20-25-114-10@plm-dev2.sportmasterpd.com</seasonMasterReference>
+    </wc:INSTANCE>
+    <wc:INSTANCE>
+        <seasonMasterReference>OR:com.lcs.wc.season.LCSSeasonMaster:44516408:549374011-1498737840507-197491520-20-25-114-10@plm-dev2.sportmasterpd.com</seasonMasterReference>
+    </wc:INSTANCE>
+</com.lcs.wc.product.LCSProduct>
+</wc:COLLECTION>

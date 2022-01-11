@@ -1,0 +1,18 @@
+<wc:COLLECTION xmlns:wc="http://www.ptc.com/infoengine/1.0">
+    <com.lcs.wc.product.LCSProduct NAME="results" TYPE="Unknown" STATUS="0">
+        <wc:INSTANCE>
+            <masterReference>OR:com.lcs.wc.part.LCSPartMaster:9716958:549374011-1498737840507-197491520-20-25-114-10@plm-dev2.sportmasterpd.com</masterReference>
+            <seasonMasterReference>OR:com.lcs.wc.season.LCSSeasonMaster:6303049:549374011-1498737840507-197491520-20-25-114-10@plm-dev2.sportmasterpd.com</seasonMasterReference>
+            <versionInfo.identifier.versionId>B</versionInfo.identifier.versionId>
+            <obid>VR:com.lcs.wc.product.LCSProduct:9716992:549374011-1498737840507-197491520-20-25-114-10@plm-dev2.sportmasterpd.com</obid>
+            <class>WCTYPE|com.lcs.wc.product.LCSProduct|com.ptcmscloud.Apparel_Product$com_lcs_wc_product_LCSProduct|com.ptcmscloud.Mens_Apparel_Product$com_lcs_wc_product_LCSProduct</class>
+        </wc:INSTANCE>
+        <wc:INSTANCE>
+            <seasonMasterReference>OR:com.lcs.wc.season.LCSSeasonMaster:44516408:549374011-1498737840507-197491520-20-25-114-10@plm-dev2.sportmasterpd.com</seasonMasterReference>
+            <masterReference>OR:com.lcs.wc.part.LCSPartMaster:9716958:549374011-1498737840507-197491520-20-25-114-10@plm-dev2.sportmasterpd.com</masterReference>
+            <versionInfo.identifier.versionId>C</versionInfo.identifier.versionId>
+            <obid>VR:com.lcs.wc.product.LCSProduct:98110863:549374011-1498737840507-197491520-20-25-114-10@plm-dev2.sportmasterpd.com</obid>
+            <class>WCTYPE|com.lcs.wc.product.LCSProduct|com.ptcmscloud.Apparel_Product$com_lcs_wc_product_LCSProduct|com.ptcmscloud.Mens_Apparel_Product$com_lcs_wc_product_LCSProduct</class>
+        </wc:INSTANCE>
+    </com.lcs.wc.product.LCSProduct>
+</wc:COLLECTION>
