@@ -6,12 +6,14 @@ import ru.wts.Address;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Person {
+public class PersonWithAddresses {
     private String firstName;
     private String lastName;
+    //@JacksonXmlElementWrapper(localName = "phoneNumbers")
+    //useWrapping = true - default value
     private List<String> phoneNumbers = new ArrayList<>();
     @JacksonXmlElementWrapper(useWrapping = false)
-    private List<Address> address = new ArrayList<>();
+    private List<Address> address; //if empty then null or default value: = new ArrayList<>();
 
     public String getFirstName() {
         return firstName;

@@ -1,4 +1,4 @@
-package ru.wts.dates;
+package ru.wts.dates.zoned;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
@@ -9,6 +9,10 @@ import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * It's not used anywhere
+ */
+@SuppressWarnings("unused")
 public class CustomZonedDateTimeDeserializer
         extends JsonDeserializer<LocalDateTime> {
 
@@ -17,12 +21,8 @@ public class CustomZonedDateTimeDeserializer
     public LocalDateTime deserialize(JsonParser jsonparser, DeserializationContext deserializationcontext) throws IOException {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy hh:mm:ss");
-
         String string = jsonparser.getText();
-
-
-            ZonedDateTime zonedDateTime = ZonedDateTime.parse(string);
-
+        ZonedDateTime zonedDateTime = ZonedDateTime.parse(string);
 
         return LocalDateTime.parse(string, formatter);
     }

@@ -6,12 +6,13 @@ import ru.wts.Address;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonWithAddresses {
+public class PersonWithAddressesWrapper {
     private String firstName;
     private String lastName;
+    //@JacksonXmlElementWrapper(localName = "phoneNumbers")
     private List<String> phoneNumbers = new ArrayList<>();
-    @JacksonXmlElementWrapper(useWrapping = false)
-    private List<Address> address = new ArrayList<>();
+    //@JacksonXmlElementWrapper(localName = "addresses")
+    private List<Address> addresses; // will be empty list
 
     public String getFirstName() {
         return firstName;
@@ -37,11 +38,11 @@ public class PersonWithAddresses {
         this.phoneNumbers = phoneNumbers;
     }
 
-    public List<Address> getAddress() {
-        return address;
+    public List<Address> getAddresses() {
+        return addresses;
     }
 
-    public void setAddress(List<Address> address) {
-        this.address = address;
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
     }
 }

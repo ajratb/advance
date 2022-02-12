@@ -1,11 +1,11 @@
-package ru.wts.dates;
+package ru.wts.dates.zoned;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.ZonedDateTime;
 
-public class XmlEvent3 {
+public class XmlEventWithZonedDatetime {
 
     @JacksonXmlProperty(localName = "name")
     public String name;

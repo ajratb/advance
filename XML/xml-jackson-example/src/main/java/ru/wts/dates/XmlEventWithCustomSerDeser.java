@@ -6,7 +6,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.LocalDateTime;
 
-public class XmlEvent {
+public class XmlEventWithCustomSerDeser {
 
     @JacksonXmlProperty(localName = "name")
     public String name;
