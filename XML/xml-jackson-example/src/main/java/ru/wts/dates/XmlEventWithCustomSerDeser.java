@@ -1,16 +1,18 @@
 package ru.wts.dates;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import java.time.LocalDateTime;
 
-public class XmlEvent2 {
+public class XmlEvent {
 
     @JacksonXmlProperty(localName = "name")
     public String name;
 
     @JacksonXmlProperty(localName = "eventDate")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonSerialize(using = CustomLocalDateTimeSerializer.class)
+    @JsonDeserialize(using = CustomLocalDateTimeDeserializer.class)
     public LocalDateTime eventDate;
 }
